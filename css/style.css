@@ -47,3 +47,11 @@ h1 {
     color: white;
     align-content: center;
 }
+
+.box:hover {
+    cursor: pointer;
+}
+
+.clicked {
+    background-color: #7fffd4;
+}

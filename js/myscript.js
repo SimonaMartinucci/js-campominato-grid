@@ -6,29 +6,31 @@ const container = document.querySelector(".container");
 // richiamo il bottone da cliccare
 const button = document.querySelector(".btn");
 
-console.log(container, button);
 
-// creo evento al click
+// creo evento al click per generare griglia
 button.addEventListener("click",
     function() {
 
-        // richiamo funzione per creare i box con classe
+        // creo ciclo
         for(i = 1; i <= 100; i++) {
-            let box = createClassElement("div", "box");
+            // richiamo funzione per creare i box con classe
+            const box = createClassElement("div", "box");
+
+            // dico che il contenuto sono i numeri generati dal ciclo
             let content = i;
+
+            // creo evento al click per colorare box
+            box.addEventListener("click",
+                function() {
+                    box.classList.add("clicked");
+                    // emetto un messaggio in console con il numero della cella cliccata
+                    console.log(content);
+                }
+            )         
             // metto i numeri all'interno dei box
             box.append(content);
             // li metto nel container
             container.append(box);
-        }
+        }   
     }  
 )
-
-
-
-
-
-
-// Quando l’utente clicca su ogni cella
-// la cella cliccata si colora di azzurro
-// emetto un messaggio in console con il numero della cella cliccata
